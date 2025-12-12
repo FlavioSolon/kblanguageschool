@@ -4,7 +4,7 @@
 	import QuemSomos from '$lib/components/QuemSomos.svelte';
 	import PorQueEscolher from '$lib/components/PorQueEscolher.svelte';
 	import ComoFunciona from '$lib/components/ComoFunciona.svelte';
-	import Destaques from '$lib/components/Destaques.svelte';
+	import CustomPackagesSection from '$lib/components/CustomPackagesSection.svelte';
 </script>
 
 <Hero />
@@ -12,4 +12,4 @@
 <QuemSomos />
 <PorQueEscolher />
 <ComoFunciona />
-<Destaques />
+<CustomPackagesSection />

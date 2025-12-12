@@ -1,131 +1,189 @@
 <script>
-	import StickerButton from '$lib/components/StickerButton.svelte';
-	import HalftoneBackground from '$lib/components/HalftoneBackground.svelte';
 	import { fly } from 'svelte/transition';
+	import CustomPackagesSection from '$lib/components/CustomPackagesSection.svelte';
 
-	const individualPackages = [
-		{ hours: '1h', semester: '370', annual: '341' },
-		{ hours: '1h30', semester: '518', annual: '481' },
-		{ hours: '2h', semester: '665', annual: '608' }
+	let individualPackages = [
+		{
+			hours: '1h semanal',
+			semesterPrice: 'R$370,00',
+			annualPrice: 'R$341,00'
+		},
+		{
+			hours: '1h30 semanal',
+			semesterPrice: 'R$518,00',
+			annualPrice: 'R$481,00'
+		},
+		{
+			hours: '2h semanais',
+			semesterPrice: 'R$665,00',
+			annualPrice: 'R$608,00'
+		}
 	];
 
-	const groupPackages = [
-		{ hours: '1h', semester: '220' },
-		{ hours: '1h30', semester: '331' },
-		{ hours: '2h', semester: '441' }
+	let groupPackages = [
+		{
+			hours: '1h semanal',
+			semesterPrice: 'R$220,00',
+			annualPrice: 'R$200,00'
+		},
+		{
+			hours: '1h30 semanal',
+			semesterPrice: 'R$331,00',
+			annualPrice: 'R$300,00'
+		},
+		{
+			hours: '2h semanais',
+			semesterPrice: 'R$441,00',
+			annualPrice: 'R$400,00'
+		}
 	];
 </script>
 
-<svelte:head>
-	<title>Preços - KB Language School</title>
-</svelte:head>
-
-<!-- Header -->
-<header class="relative overflow-hidden bg-brand-red px-6 py-20 text-center">
-	<!-- Scribble Texture Overlay (CSS approximation) -->
-	<div
-		class="absolute inset-0 opacity-10 pointer-events-none"
-		style="background-image: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%); background-size: 20px 20px;"
-	></div>
-
-	<div class="relative z-10">
-		<h1 class="font-display text-6xl text-brand-yellow drop-shadow-[4px_4px_0px_black] md:text-8xl">
-			PACOTES DE AULAS
-		</h1>
-		<p class="mt-4 font-hand text-3xl text-white md:text-4xl">Do zero à fluência, no seu ritmo!</p>
-	</div>
-</header>
-
-<!-- Group 1: Individual Packages -->
-<section class="relative bg-brand-purple px-6 py-20">
-	<HalftoneBackground color="brand-yellow" />
-
-	<div class="relative z-10 mx-auto max-w-6xl">
-		<h2 class="mb-12 text-center font-display text-4xl text-white drop-shadow-[3px_3px_0px_black]">
-			PACOTES INDIVIDUAIS
-		</h2>
-
-		<div class="grid gap-8 md:grid-cols-3">
-			{#each individualPackages as pkg, i}
-				<div
-					in:fly={{ y: 50, duration: 800, delay: i * 200 }}
-					class="sticker flex flex-col items-center bg-brand-yellow p-8 text-center transition-transform hover:-translate-y-2"
-				>
-					<h3 class="font-display text-5xl text-brand-purple mb-2">{pkg.hours}</h3>
-					<span class="font-body text-sm font-bold uppercase tracking-wide text-brand-brown mb-6"
-						>Semanal</span
-					>
-
-					<div class="w-full space-y-6">
-						<div class="border-b-2 border-brand-brown pb-4">
-							<p class="font-body text-sm font-bold text-brand-brown">Semestral (25 semanas)</p>
-							<p class="font-display text-3xl text-brand-red">
-								<span class="text-lg align-top">6x R$</span>{pkg.semester}
-							</p>
-						</div>
-						<div>
-							<p class="font-body text-sm font-bold text-brand-brown">Anual (50 semanas)</p>
-							<p class="font-display text-3xl text-brand-red">
-								<span class="text-lg align-top">12x R$</span>{pkg.annual}
-							</p>
-						</div>
-					</div>
-
-					<div class="mt-8">
-						<StickerButton text="Eu Quero" color="purple" />
-					</div>
-				</div>
-			{/each}
+<div class="min-h-screen font-body">
+	<!-- INDIVIDUAL PACKAGES SECTION -->
+	<section
+		class="relative overflow-hidden bg-brand-purple px-6 py-12 text-center md:px-12 md:py-20"
+	>
+		<!-- Header -->
+		<div class="mb-12">
+			<div
+				class="inline-block -rotate-2 transform bg-brand-yellow px-8 py-4 shadow-[8px_8px_0px_rgba(0,0,0,0.3)]"
+			>
+				<h1 class="font-display text-5xl uppercase text-brand-purple md:text-7xl">
+					Pacotes Individuais
+				</h1>
+			</div>
+			<p class="mx-auto mt-8 max-w-4xl text-xl font-bold text-brand-yellow md:text-2xl">
+				Aulas online, ao vivo e privadas. Só você, seu professor(a) e aulas exclusivamente
+				preparadas para o seus objetivos!
+			</p>
 		</div>
-	</div>
-</section>
 
-<!-- Group 2: Group Packages -->
-<section class="bg-brand-cream px-6 py-20 border-t-4 border-brand-brown">
-	<div class="mx-auto max-w-6xl">
-		<h2
-			class="mb-12 text-center font-display text-4xl text-brand-brown drop-shadow-[2px_2px_0px_rgba(0,0,0,0.2)]"
-		>
-			TURMAS A PARTIR DE 4 PESSOAS
-		</h2>
+		<!-- Semestral -->
+		<div class="mb-16">
+			<h2
+				class="mb-2 font-display text-4xl uppercase text-brand-yellow underline decoration-4 underline-offset-8 md:text-5xl"
+			>
+				Pacotes Semestrais
+			</h2>
+			<p class="mb-8 text-xl font-bold italic text-brand-yellow">25 semanas</p>
 
-		<div class="grid gap-8 md:grid-cols-3">
-			{#each groupPackages as pkg}
-				<div
-					class="flex flex-col items-center rounded-3xl border-4 border-brand-brown p-8 text-center transition-colors hover:bg-white"
-				>
-					<h3 class="font-display text-5xl text-brand-brown mb-2">{pkg.hours}</h3>
-					<span class="font-body text-sm font-bold uppercase tracking-wide text-brand-brown mb-6"
-						>Semanal</span
+			<div class="grid gap-8 md:grid-cols-3">
+				{#each individualPackages as pkg, i}
+					<div
+						class="rounded-3xl border-4 border-brand-yellow bg-brand-yellow p-6 text-brand-purple shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-transform hover:scale-105"
+						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					>
-
-					<div class="w-full">
-						<p class="font-body text-sm font-bold text-brand-brown">Semestral (25 semanas)</p>
-						<p class="font-display text-4xl text-brand-orange mt-2">
-							<span class="text-lg align-top">6x R$</span>{pkg.semester}
-						</p>
+						<h3
+							class="mb-4 rounded-full bg-brand-purple py-2 font-display text-2xl text-brand-yellow"
+						>
+							{pkg.hours}
+						</h3>
+						<p class="text-lg font-bold">6 mensalidades de</p>
+						<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
 					</div>
-
-					<div class="mt-8">
-						<StickerButton text="Matricular" color="orange" />
-					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
 
-<!-- Group 3: Custom Banner -->
-<section class="bg-brand-orange px-6 py-16 text-center border-t-4 border-brand-brown">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="font-display text-4xl text-white drop-shadow-[3px_3px_0px_black] mb-8 md:text-5xl">
-			Precisa de carga horária maior?
-		</h2>
-		<StickerButton
-			text="FALE COM A GENTE"
-			link="https://wa.me/5511999999999"
-			color="white"
-			class="text-brand-orange"
-		/>
-	</div>
-</section>
+		<!-- Anual -->
+		<div>
+			<h2
+				class="mb-2 font-display text-4xl uppercase text-brand-yellow underline decoration-4 underline-offset-8 md:text-5xl"
+			>
+				Pacotes Anuais
+			</h2>
+			<p class="mb-8 text-xl font-bold italic text-brand-yellow">50 semanas</p>
+
+			<div class="grid gap-8 md:grid-cols-3">
+				{#each individualPackages as pkg, i}
+					<div
+						class="rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-transform hover:scale-105"
+						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
+					>
+						<h3
+							class="mb-4 rounded-full bg-brand-yellow py-2 font-display text-2xl text-brand-purple"
+						>
+							{pkg.hours}
+						</h3>
+						<p class="text-lg font-bold">12 mensalidades de</p>
+						<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- GROUP PACKAGES SECTION -->
+	<section
+		class="relative overflow-hidden border-t-4 border-brand-brown bg-brand-cream px-6 py-12 text-center md:px-12 md:py-20"
+	>
+		<!-- Header -->
+		<div class="mb-12">
+			<div
+				class="inline-block rotate-1 transform bg-brand-brown px-8 py-4 shadow-[8px_8px_0px_rgba(0,0,0,0.2)]"
+			>
+				<h1 class="font-display text-4xl uppercase text-white md:text-6xl">
+					Turmas a partir de 4 pessoas
+				</h1>
+			</div>
+			<p class="mx-auto mt-8 max-w-4xl text-xl font-bold text-brand-brown md:text-2xl">
+				Aulas online, ao vivo e grupais. Você aprende com outras pessoas, podendo trazer junto
+				consigo amigos ou colegas!
+			</p>
+		</div>
+
+		<!-- Semestral -->
+		<div class="mb-16">
+			<h2
+				class="mb-2 font-display text-4xl uppercase text-brand-brown underline decoration-4 underline-offset-8 md:text-5xl"
+			>
+				Pacotes Semestrais
+			</h2>
+			<p class="mb-8 text-xl font-bold italic text-brand-brown">25 semanas</p>
+
+			<div class="grid gap-8 md:grid-cols-3">
+				{#each groupPackages as pkg, i}
+					<div
+						class="rounded-3xl border-4 border-brand-brown bg-white p-6 text-brand-brown shadow-[8px_8px_0px_rgba(88,28,12,0.3)] transition-transform hover:scale-105"
+						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
+					>
+						<h3 class="mb-4 rounded-lg bg-brand-brown py-2 font-display text-2xl text-white">
+							{pkg.hours}
+						</h3>
+						<p class="text-lg font-bold">6 mensalidades de</p>
+						<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<!-- Anual -->
+		<div>
+			<h2
+				class="mb-2 font-display text-4xl uppercase text-brand-brown underline decoration-4 underline-offset-8 md:text-5xl"
+			>
+				Pacotes Anuais
+			</h2>
+			<p class="mb-8 text-xl font-bold italic text-brand-brown">50 semanas</p>
+
+			<div class="grid gap-8 md:grid-cols-3">
+				{#each groupPackages as pkg, i}
+					<div
+						class="rounded-3xl border-4 border-brand-brown bg-brand-brown p-6 text-white shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-transform hover:scale-105"
+						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
+					>
+						<h3 class="mb-4 rounded-lg bg-white py-2 font-display text-2xl text-brand-brown">
+							{pkg.hours}
+						</h3>
+						<p class="text-lg font-bold">12 mensalidades de</p>
+						<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- CUSTOM PACKAGES SECTION -->
+	<CustomPackagesSection />
+</div>
