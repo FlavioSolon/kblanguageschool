@@ -1,4 +1,6 @@
 <script>
+	import { fly } from 'svelte/transition';
+
 	const cards = [
 		{
 			title: 'MISSÃO',
@@ -37,8 +39,9 @@
 
 		<div class="grid gap-8 md:grid-cols-3">
 			<!-- Missão & Visão -->
-			{#each cards as card}
+			{#each cards as card, i}
 				<div
+					in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					class="flex flex-col rounded-3xl border-4 border-brand-brown p-8 hover:bg-white/10 transition-colors"
 				>
 					<h3
@@ -54,6 +57,7 @@
 
 			<!-- Valores -->
 			<div
+				in:fly={{ y: 50, duration: 800, delay: 400 }}
 				class="flex flex-col rounded-3xl border-4 border-brand-brown p-8 hover:bg-white/10 transition-colors"
 			>
 				<h3

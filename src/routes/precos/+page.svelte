@@ -1,6 +1,7 @@
 <script>
 	import StickerButton from '$lib/components/StickerButton.svelte';
 	import HalftoneBackground from '$lib/components/HalftoneBackground.svelte';
+	import { fly } from 'svelte/transition';
 
 	const individualPackages = [
 		{ hours: '1h', semester: '370', annual: '341' },
@@ -45,8 +46,9 @@
 		</h2>
 
 		<div class="grid gap-8 md:grid-cols-3">
-			{#each individualPackages as pkg}
+			{#each individualPackages as pkg, i}
 				<div
+					in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					class="sticker flex flex-col items-center bg-brand-yellow p-8 text-center transition-transform hover:-translate-y-2"
 				>
 					<h3 class="font-display text-5xl text-brand-purple mb-2">{pkg.hours}</h3>

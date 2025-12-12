@@ -1,3 +1,7 @@
+<script>
+	import { Instagram, Mail, MessageCircle } from 'lucide-svelte';
+</script>
+
 <footer class="border-t-4 border-brand-brown bg-brand-orange px-6 py-12 text-brand-brown">
 	<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
 		<div class="text-center md:text-left">
@@ -8,24 +12,32 @@
 		</div>
 
 		<div class="flex gap-4">
-			<!-- Social Icons Placeholders -->
 			<a
-				href="#"
+				href="https://instagram.com"
+				target="_blank"
+				rel="noopener noreferrer"
 				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
+				aria-label="Instagram"
 			>
-				IG
+				<Instagram size={24} />
 			</a>
 			<a
-				href="#"
+				href="mailto:info@kbschool.com"
+				target="_blank"
+				rel="noopener noreferrer"
 				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
+				aria-label="Email"
 			>
-				FB
+				<Mail size={24} />
 			</a>
 			<a
-				href="#"
+				href="https://wa.me/5511999999999"
+				target="_blank"
+				rel="noopener noreferrer"
 				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
+				aria-label="WhatsApp"
 			>
-				WA
+				<MessageCircle size={24} />
 			</a>
 		</div>
 
