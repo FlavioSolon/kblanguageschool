@@ -14,6 +14,11 @@
   --color-brand-cream: #F9F4EF;
   --color-brand-brown: #421C1C;
 
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-hand: 'Pacifico', cursive;
+  
+  /* Keeping original names as aliases if needed, but using requested names primarily */
   --font-anton: 'Anton', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-pacifico: 'Pacifico', cursive;

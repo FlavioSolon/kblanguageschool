@@ -1,7 +1,7 @@
 <script>
-	import './layout.css';
+	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import Header from '$lib/components/Header.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
 	let { children } = $props();
@@ -12,9 +12,9 @@
 </svelte:head>
 
 <div
-	class="flex min-h-screen flex-col bg-brand-cream font-montserrat text-brand-brown selection:bg-brand-yellow selection:text-brand-brown"
+	class="flex min-h-screen flex-col bg-brand-cream font-body text-brand-brown selection:bg-brand-yellow selection:text-brand-brown"
 >
-	<Header />
+	<Navbar />
 	<main class="flex-1">
 		{@render children()}
 	</main>
