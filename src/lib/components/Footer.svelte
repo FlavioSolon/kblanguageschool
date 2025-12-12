@@ -13,29 +13,16 @@
 
 		<div class="flex gap-4">
 			<a
-				href="https://instagram.com"
+				href="https://www.instagram.com/kblanguageschool?igsh=MXhqeWQ3ZGlleXIwZQ%3D%3D"
 				target="_blank"
-				rel="noopener noreferrer"
-				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
-				aria-label="Instagram"
+				class="flex h-12 w-12 items-center justify-center border-2 border-brand-brown bg-white shadow-[4px_4px_0px_rgba(88,28,12,1)] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(88,28,12,1)]"
 			>
 				<Instagram size={24} />
 			</a>
 			<a
-				href="mailto:info@kbschool.com"
+				href="https://wa.me/559293120574?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20aulas%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
 				target="_blank"
-				rel="noopener noreferrer"
-				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
-				aria-label="Email"
-			>
-				<Mail size={24} />
-			</a>
-			<a
-				href="https://wa.me/5511999999999"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="bg-white p-3 border-2 border-brand-brown hard-shadow hover:-translate-y-1 transition-transform"
-				aria-label="WhatsApp"
+				class="flex h-12 w-12 items-center justify-center border-2 border-brand-brown bg-white shadow-[4px_4px_0px_rgba(88,28,12,1)] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(88,28,12,1)]"
 			>
 				<MessageCircle size={24} />
 			</a>

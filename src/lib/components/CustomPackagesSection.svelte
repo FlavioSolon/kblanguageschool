@@ -39,13 +39,18 @@
 				</div>
 			</div>
 
-			<!-- CTA Button -->
-			<div in:fly={{ x: 50, duration: 800, delay: 400 }}>
+			<!-- CTA Buttons -->
+			<div class="flex flex-col gap-4" in:fly={{ x: 50, duration: 800, delay: 400 }}>
 				<StickerButton
 					text="FALE COM A GENTE"
-					link="https://wa.me/5511999999999"
+					link="https://wa.me/559293120574?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20aulas%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
 					color="yellow"
 					icon={MessageCircle}
+				/>
+				<StickerButton
+					text="AGENDAR AULA EXPERIMENTAL"
+					link="https://calendly.com/keitybraule/30min?month=2025-12"
+					color="white"
 				/>
 			</div>
 

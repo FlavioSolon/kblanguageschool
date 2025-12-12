@@ -5,8 +5,7 @@
 	const links = [
 		{ name: 'Home', href: '/' },
 		{ name: 'Quem Somos', href: '#quem-somos' },
-		{ name: 'Por Que Escolher', href: '#por-que-escolher' },
-		{ name: 'Destaques', href: '#destaques' }
+		{ name: 'Por Que Escolher', href: '#por-que-escolher' }
 	];
 
 	let isMenuOpen = $state(false);

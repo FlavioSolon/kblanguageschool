@@ -1,6 +1,8 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import CustomPackagesSection from '$lib/components/CustomPackagesSection.svelte';
+	import StickerButton from '$lib/components/StickerButton.svelte';
+	import MessageCircle from 'lucide-svelte/icons/message-circle';
 
 	let individualPackages = [
 		{
@@ -37,6 +39,12 @@
 			annualPrice: 'R$400,00'
 		}
 	];
+
+	function getWhatsAppLink(pkg, type, period) {
+		const price = period === 'Semestral' ? pkg.semesterPrice : pkg.annualPrice;
+		const message = `Olá! Tenho interesse no pacote ${type} de ${pkg.hours} (${period}) por ${price}. Gostaria de mais informações.`;
+		return `https://wa.me/559293120574?text=${encodeURIComponent(message)}`;
+	}
 </script>
 
 <div class="min-h-screen font-body">
@@ -71,16 +79,32 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each individualPackages as pkg, i}
 					<div
-						class="rounded-3xl border-4 border-brand-yellow bg-brand-yellow p-6 text-brand-purple shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-transform hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-yellow p-6 text-brand-purple shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105"
 						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					>
-						<h3
-							class="mb-4 rounded-full bg-brand-purple py-2 font-display text-2xl text-brand-yellow"
+						<div>
+							<h3
+								class="mb-4 rounded-full bg-brand-purple py-2 font-display text-2xl text-brand-yellow"
+							>
+								{pkg.hours}
+							</h3>
+							<p class="text-lg font-bold">6 mensalidades de</p>
+							<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+						</div>
+
+						<!-- Button: Always visible on mobile, expands on hover on desktop -->
+						<div
+							class="mt-6 w-full md:max-h-0 md:overflow-hidden md:transition-all md:duration-300 md:group-hover:max-h-32"
 						>
-							{pkg.hours}
-						</h3>
-						<p class="text-lg font-bold">6 mensalidades de</p>
-						<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+							<div class="flex justify-center pt-2 pb-4">
+								<StickerButton
+									text="EU QUERO"
+									color="purple"
+									icon={MessageCircle}
+									link={getWhatsAppLink(pkg, 'Individual', 'Semestral')}
+								/>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>
@@ -98,16 +122,31 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each individualPackages as pkg, i}
 					<div
-						class="rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-transform hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-all duration-300 hover:scale-105"
 						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
 					>
-						<h3
-							class="mb-4 rounded-full bg-brand-yellow py-2 font-display text-2xl text-brand-purple"
+						<div>
+							<h3
+								class="mb-4 rounded-full bg-brand-yellow py-2 font-display text-2xl text-brand-purple"
+							>
+								{pkg.hours}
+							</h3>
+							<p class="text-lg font-bold">12 mensalidades de</p>
+							<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+						</div>
+
+						<div
+							class="mt-6 w-full md:max-h-0 md:overflow-hidden md:transition-all md:duration-300 md:group-hover:max-h-32"
 						>
-							{pkg.hours}
-						</h3>
-						<p class="text-lg font-bold">12 mensalidades de</p>
-						<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+							<div class="flex justify-center pt-2 pb-4">
+								<StickerButton
+									text="EU QUERO"
+									color="yellow"
+									icon={MessageCircle}
+									link={getWhatsAppLink(pkg, 'Individual', 'Anual')}
+								/>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>
@@ -145,14 +184,29 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each groupPackages as pkg, i}
 					<div
-						class="rounded-3xl border-4 border-brand-brown bg-white p-6 text-brand-brown shadow-[8px_8px_0px_rgba(88,28,12,0.3)] transition-transform hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-white p-6 text-brand-brown shadow-[8px_8px_0px_rgba(88,28,12,0.3)] transition-all duration-300 hover:scale-105"
 						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					>
-						<h3 class="mb-4 rounded-lg bg-brand-brown py-2 font-display text-2xl text-white">
-							{pkg.hours}
-						</h3>
-						<p class="text-lg font-bold">6 mensalidades de</p>
-						<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+						<div>
+							<h3 class="mb-4 rounded-lg bg-brand-brown py-2 font-display text-2xl text-white">
+								{pkg.hours}
+							</h3>
+							<p class="text-lg font-bold">6 mensalidades de</p>
+							<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+						</div>
+
+						<div
+							class="mt-6 w-full md:max-h-0 md:overflow-hidden md:transition-all md:duration-300 md:group-hover:max-h-32"
+						>
+							<div class="flex justify-center pt-2 pb-4">
+								<StickerButton
+									text="EU QUERO"
+									color="brown"
+									icon={MessageCircle}
+									link={getWhatsAppLink(pkg, 'Grupo', 'Semestral')}
+								/>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>
@@ -170,14 +224,29 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each groupPackages as pkg, i}
 					<div
-						class="rounded-3xl border-4 border-brand-brown bg-brand-brown p-6 text-white shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-transform hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-brand-brown p-6 text-white shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105"
 						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
 					>
-						<h3 class="mb-4 rounded-lg bg-white py-2 font-display text-2xl text-brand-brown">
-							{pkg.hours}
-						</h3>
-						<p class="text-lg font-bold">12 mensalidades de</p>
-						<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+						<div>
+							<h3 class="mb-4 rounded-lg bg-white py-2 font-display text-2xl text-brand-brown">
+								{pkg.hours}
+							</h3>
+							<p class="text-lg font-bold">12 mensalidades de</p>
+							<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+						</div>
+
+						<div
+							class="mt-6 w-full md:max-h-0 md:overflow-hidden md:transition-all md:duration-300 md:group-hover:max-h-32"
+						>
+							<div class="flex justify-center pt-2 pb-4">
+								<StickerButton
+									text="EU QUERO"
+									color="white"
+									icon={MessageCircle}
+									link={getWhatsAppLink(pkg, 'Grupo', 'Anual')}
+								/>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>
