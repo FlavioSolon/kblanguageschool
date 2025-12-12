@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Pacifico&display=swap');
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-brand-purple: #7C5CAB;
+  --color-brand-pink: #F094BA;
+  --color-brand-red: #D63E3E;
+  --color-brand-yellow: #F8D84A;
+  --color-brand-orange: #F27C38;
+  --color-brand-cream: #F9F4EF;
+  --color-brand-brown: #421C1C;
+
+  --font-anton: 'Anton', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-pacifico: 'Pacifico', cursive;
+}
+
+@layer utilities {
+  .hard-shadow {
+    box-shadow: 4px 4px 0px 0px var(--color-brand-brown);
+  }
+  
+  .sticker {
+    @apply border-2 border-white shadow-[2px_2px_0px_rgba(0,0,0,0.2)];
+  }
+
+  .halftone-pattern {
+    background-image: radial-gradient(var(--color-brand-purple) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+}
