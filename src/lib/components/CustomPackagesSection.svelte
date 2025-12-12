@@ -1,7 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import StickerButton from './StickerButton.svelte';
-	import MessageCircle from 'lucide-svelte/icons/message-circle';
+	import { Megaphone, Smartphone, MessageCircle } from 'lucide-svelte';
 </script>
 
 <section class="relative overflow-hidden border-t-4 border-brand-brown">
@@ -25,17 +25,16 @@
 	<!-- Bottom Half: Orange -->
 	<div class="relative bg-brand-orange px-6 py-12 text-center md:px-12 md:py-16">
 		<div class="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
-			<!-- Megaphone Image Placeholder -->
+			<!-- Megaphone Icon -->
 			<div
 				class="relative h-48 w-48 md:h-64 md:w-64"
 				in:fly={{ x: -50, duration: 800, delay: 400 }}
 			>
-				<!-- Replace with actual megaphone image -->
 				<div
 					class="absolute inset-0 rotate-[-15deg] transform rounded-full border-4 border-black bg-white shadow-[8px_8px_0px_black]"
 				>
-					<div class="flex h-full items-center justify-center font-display text-4xl text-black">
-						📢
+					<div class="flex h-full items-center justify-center text-black">
+						<Megaphone size={120} strokeWidth={1.5} />
 					</div>
 				</div>
 			</div>
@@ -50,17 +49,16 @@
 				/>
 			</div>
 
-			<!-- Phone/Hand Image Placeholder -->
+			<!-- Smartphone Icon -->
 			<div
 				class="relative hidden h-48 w-48 md:block md:h-64 md:w-64"
 				in:fly={{ x: 50, duration: 800, delay: 600 }}
 			>
-				<!-- Replace with actual hand/phone image -->
 				<div
 					class="absolute inset-0 rotate-[15deg] transform rounded-full border-4 border-black bg-white shadow-[8px_8px_0px_black]"
 				>
-					<div class="flex h-full items-center justify-center font-display text-4xl text-black">
-						📱
+					<div class="flex h-full items-center justify-center text-black">
+						<Smartphone size={120} strokeWidth={1.5} />
 					</div>
 				</div>
 			</div>

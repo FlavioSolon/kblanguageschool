@@ -37,7 +37,7 @@
 					{link.name}
 				</a>
 			{/each}
-			<StickerButton text="Matricule-se" color="yellow" />
+			<StickerButton text="Matricule-se" color="yellow" link="/precos" />
 		</div>
 
 		<!-- Mobile Menu Button -->
@@ -70,7 +70,7 @@
 				onkeydown={(e) => e.key === 'Enter' && toggleMenu()}
 				onclick={toggleMenu}
 			>
-				<StickerButton text="Matricule-se" color="yellow" />
+				<StickerButton text="Matricule-se" color="yellow" link="/precos" />
 			</div>
 		</div>
 	{/if}
