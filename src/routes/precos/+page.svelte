@@ -122,7 +122,7 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each individualPackages as pkg, i}
 					<div
-						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-all duration-300 hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-all duration-300"
 						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
 					>
 						<div>
@@ -184,7 +184,7 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each groupPackages as pkg, i}
 					<div
-						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-white p-6 text-brand-brown shadow-[8px_8px_0px_rgba(88,28,12,0.3)] transition-all duration-300 hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-white p-6 text-brand-brown shadow-[8px_8px_0px_rgba(88,28,12,0.3)] transition-all duration-300"
 						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
 					>
 						<div>
@@ -224,7 +224,7 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each groupPackages as pkg, i}
 					<div
-						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-brand-brown p-6 text-white shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105"
+						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-brown bg-brand-brown p-6 text-white shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300"
 						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
 					>
 						<div>

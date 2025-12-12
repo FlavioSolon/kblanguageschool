@@ -8,6 +8,18 @@
 </script>
 
 <svelte:head>
+	<title>KB Language School - Aprenda Inglês com Estilo</title>
+	<meta
+		name="description"
+		content="Aprenda idiomas de forma acessível, personalizada e prática. Aulas online, ao vivo e com metodologia focada em conversação."
+	/>
+	<meta property="og:title" content="KB Language School - Aprenda Inglês com Estilo" />
+	<meta
+		property="og:description"
+		content="Aprenda idiomas de forma acessível, personalizada e prática. Aulas online, ao vivo e com metodologia focada em conversação."
+	/>
+	<meta property="og:image" content="https://kblanguageschool.com/og-image.png" />
+	<meta property="og:type" content="website" />
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
