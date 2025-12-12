@@ -7,14 +7,12 @@
 	<HalftoneBackground color="brand-brown" />
 
 	<div class="relative z-10 mx-auto grid max-w-6xl gap-12 md:grid-cols-2 items-center">
-		<!-- Left: Image Placeholder -->
+		<!-- Left: Image -->
 		<div class="flex justify-center md:justify-end">
 			<div
-				class="relative w-full max-w-md aspect-square bg-white border-4 border-black hard-shadow flex items-center justify-center overflow-hidden"
+				class="relative w-full max-w-md aspect-square border-4 border-black hard-shadow overflow-hidden"
 			>
-				<span class="font-display text-4xl text-brand-brown opacity-20 text-center">
-					IMG: ALUNOS + MEGAFONE POP-ART
-				</span>
+				<img src="/keity_lendo.jpg" alt="Keity lendo um livro" class="w-full h-full object-cover" />
 			</div>
 		</div>
 

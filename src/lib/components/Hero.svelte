@@ -17,21 +17,6 @@
 	></div>
 
 	<div class="relative z-10 mx-auto flex h-full max-w-7xl items-center justify-center">
-		<!-- Left Image (Keity Lendo) -->
-		{#if visible}
-			<div
-				class="hidden md:block absolute left-0 bottom-0 w-1/3 h-4/5"
-				transition:fly={{ x: -200, duration: 1000 }}
-			>
-				<!-- Placeholder for Keity Lendo -->
-				<div
-					class="w-full h-full bg-brand-cream/20 border-4 border-white rounded-t-full flex items-end justify-center pb-10 sticker"
-				>
-					<span class="font-anton text-4xl text-white opacity-50">KEITY LENDO</span>
-				</div>
-			</div>
-		{/if}
-
 		<!-- Center Text -->
 		<div class="flex flex-col items-center justify-center z-20">
 			<h1
@@ -47,20 +32,5 @@
 				</span>
 			</div>
 		</div>
-
-		<!-- Right Image (Keity Rindo) -->
-		{#if visible}
-			<div
-				class="hidden md:block absolute right-0 bottom-0 w-1/3 h-4/5"
-				transition:fly={{ x: 200, duration: 1000 }}
-			>
-				<!-- Placeholder for Keity Rindo -->
-				<div
-					class="w-full h-full bg-brand-pink/20 border-4 border-white rounded-t-full flex items-end justify-center pb-10 sticker"
-				>
-					<span class="font-anton text-4xl text-white opacity-50">KEITY RINDO</span>
-				</div>
-			</div>
-		{/if}
 	</div>
 </section>

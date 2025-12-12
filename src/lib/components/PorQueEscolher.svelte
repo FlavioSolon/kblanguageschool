@@ -8,14 +8,12 @@
 
 <section id="por-que-escolher" class="bg-brand-red px-6 py-20 border-t-4 border-brand-brown">
 	<div class="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row">
-		<!-- Left: Image Placeholder -->
+		<!-- Left: Image -->
 		<div class="flex-1 flex justify-center md:justify-end">
 			<div
 				class="sticker relative h-80 w-80 bg-brand-cream flex items-center justify-center rounded-full overflow-hidden border-4 border-white"
 			>
-				<span class="font-anton text-4xl text-brand-red opacity-50 text-center px-4"
-					>ALUNA PENSATIVA</span
-				>
+				<img src="/aluna_pensando.jpg" alt="Aluna pensando" class="w-full h-full object-cover" />
 			</div>
 		</div>
 
