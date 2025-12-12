@@ -1,44 +1,66 @@
 <script>
+	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
+	let visible = $state(false);
+
+	onMount(() => {
+		visible = true;
+	});
 </script>
 
-<section class="relative overflow-hidden bg-brand-purple px-6 py-20 text-center md:text-left">
-	<!-- Halftone Pattern Overlay -->
-	<div class="halftone-pattern absolute inset-0 opacity-10 pointer-events-none"></div>
+<section class="relative min-h-[600px] overflow-hidden bg-brand-purple px-6 py-20 text-center">
+	<!-- Spiral Background (CSS Radial Gradient approximation for spirals) -->
+	<div
+		class="absolute inset-0 opacity-30 pointer-events-none"
+		style="background: radial-gradient(circle at center, transparent 0%, transparent 20%, #4a1d6e 20%, #4a1d6e 22%, transparent 22%, transparent 40%, #4a1d6e 40%, #4a1d6e 42%, transparent 42%, transparent 60%, #4a1d6e 60%, #4a1d6e 62%, transparent 62%, transparent 80%, #4a1d6e 80%, #4a1d6e 82%, transparent 82%); background-size: 200px 200px;"
+	></div>
 
-	<div class="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row">
-		<div class="relative z-10 flex-1">
-			<h1
-				class="font-anton text-5xl uppercase leading-tight text-brand-yellow drop-shadow-[4px_4px_0px_rgba(66,28,28,1)] md:text-7xl"
+	<div class="relative z-10 mx-auto flex h-full max-w-7xl items-center justify-center">
+		<!-- Left Image (Keity Lendo) -->
+		{#if visible}
+			<div
+				class="hidden md:block absolute left-0 bottom-0 w-1/3 h-4/5"
+				transition:fly={{ x: -200, duration: 1000 }}
 			>
-				Domine o Inglês <br />
-				<span class="text-white">Sem Chatice!</span>
-			</h1>
-			<p class="font-montserrat mt-6 text-xl font-bold text-white md:text-2xl">
-				Aulas dinâmicas, focadas em conversação e cultura pop.
-			</p>
-			<div class="mt-8">
-				<a
-					href="#contato"
-					class="hard-shadow inline-block transform bg-brand-red px-8 py-4 font-anton text-2xl uppercase tracking-wider text-white transition-transform hover:-translate-y-1 hover:rotate-1"
+				<!-- Placeholder for Keity Lendo -->
+				<div
+					class="w-full h-full bg-brand-cream/20 border-4 border-white rounded-t-full flex items-end justify-center pb-10 sticker"
 				>
-					Comece Agora
-				</a>
+					<span class="font-anton text-4xl text-white opacity-50">KEITY LENDO</span>
+				</div>
 			</div>
-		</div>
+		{/if}
 
-		<div class="relative z-10 flex-1">
-			<!-- Placeholder for Hero Image -->
-			<div
-				class="sticker mx-auto h-64 w-64 rotate-3 bg-brand-cream flex items-center justify-center md:h-96 md:w-96"
+		<!-- Center Text -->
+		<div class="flex flex-col items-center justify-center z-20">
+			<h1
+				class="font-display text-8xl md:text-9xl text-white drop-shadow-[6px_6px_0px_rgba(0,0,0,1)] tracking-tighter"
 			>
-				<span class="font-anton text-4xl text-brand-purple opacity-50">IMG</span>
-			</div>
-
-			<!-- Decorative Elements -->
+				WELCOME!
+			</h1>
 			<div
-				class="absolute -top-10 -right-10 h-20 w-20 rounded-full bg-brand-yellow hard-shadow animate-bounce"
-			></div>
-			<div class="absolute -bottom-5 -left-5 h-16 w-16 rotate-12 bg-brand-pink hard-shadow"></div>
+				class="mt-4 -rotate-2 bg-brand-yellow px-8 py-2 border-4 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+			>
+				<span class="font-hand text-3xl md:text-5xl text-brand-brown font-bold">
+					to our school
+				</span>
+			</div>
 		</div>
+
+		<!-- Right Image (Keity Rindo) -->
+		{#if visible}
+			<div
+				class="hidden md:block absolute right-0 bottom-0 w-1/3 h-4/5"
+				transition:fly={{ x: 200, duration: 1000 }}
+			>
+				<!-- Placeholder for Keity Rindo -->
+				<div
+					class="w-full h-full bg-brand-pink/20 border-4 border-white rounded-t-full flex items-end justify-center pb-10 sticker"
+				>
+					<span class="font-anton text-4xl text-white opacity-50">KEITY RINDO</span>
+				</div>
+			</div>
+		{/if}
 	</div>
 </section>
