@@ -3,6 +3,7 @@
 	import ValueSection from '$lib/components/ValueSection.svelte';
 	import QuemSomos from '$lib/components/QuemSomos.svelte';
 	import PorQueEscolher from '$lib/components/PorQueEscolher.svelte';
+	import ComoFunciona from '$lib/components/ComoFunciona.svelte';
 	import Destaques from '$lib/components/Destaques.svelte';
 </script>
 
@@ -10,4 +11,5 @@
 <ValueSection />
 <QuemSomos />
 <PorQueEscolher />
+<ComoFunciona />
 <Destaques />

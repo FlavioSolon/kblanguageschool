@@ -1,29 +1,41 @@
 <script>
 	const reasons = [
-		{ title: 'Metodologia Ativa', desc: 'Nada de ficar só copiando do quadro. Aqui você fala!' },
-		{ title: 'Material Exclusivo', desc: 'Conteúdo criado pensando em você e no mundo real.' },
-		{ title: 'Aulas Flexíveis', desc: 'Online ou presencial, no seu ritmo.' }
+		'Aulas ao vivo',
+		'Flexibilidade total',
+		'Estude do celular'
 	];
 </script>
 
 <section id="por-que-escolher" class="bg-brand-red px-6 py-20 border-t-4 border-brand-brown">
-	<div class="mx-auto max-w-6xl text-center">
-		<h2
-			class="font-anton mb-12 text-4xl uppercase text-brand-yellow drop-shadow-[3px_3px_0px_rgba(66,28,28,1)] md:text-6xl"
-		>
-			Por Que Escolher?
-		</h2>
-
-		<div class="grid gap-8 md:grid-cols-3">
-			{#each reasons as reason, i}
-				<div
-					class="hard-shadow group bg-brand-cream p-6 text-left border-2 border-brand-brown transition-transform hover:-translate-y-2 hover:rotate-1"
+	<div class="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row">
+		<!-- Left: Image Placeholder -->
+		<div class="flex-1 flex justify-center md:justify-end">
+			<div
+				class="sticker relative h-80 w-80 bg-brand-cream flex items-center justify-center rounded-full overflow-hidden border-4 border-white"
+			>
+				<span class="font-anton text-4xl text-brand-red opacity-50 text-center px-4"
+					>ALUNA PENSATIVA</span
 				>
-					<div class="font-anton mb-4 text-5xl text-brand-purple opacity-20">0{i + 1}</div>
-					<h3 class="font-anton mb-2 text-2xl text-brand-brown">{reason.title}</h3>
-					<p class="font-montserrat font-medium text-brand-brown">{reason.desc}</p>
-				</div>
-			{/each}
+			</div>
+		</div>
+
+		<!-- Right: Pills List -->
+		<div class="flex-1 w-full">
+			<h2
+				class="font-anton mb-12 text-4xl uppercase text-brand-yellow drop-shadow-[3px_3px_0px_rgba(66,28,28,1)] md:text-6xl text-center md:text-left"
+			>
+				Por Que Escolher?
+			</h2>
+
+			<div class="flex flex-col gap-6 items-center md:items-start">
+				{#each reasons as reason}
+					<div
+						class="hard-shadow inline-block rounded-full bg-brand-brown px-8 py-4 text-white transition-transform hover:-translate-y-1 hover:rotate-1"
+					>
+						<span class="font-display text-2xl uppercase tracking-wide">{reason}</span>
+					</div>
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
