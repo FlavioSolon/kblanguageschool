@@ -10,10 +10,6 @@
 			price: 'R$370,00'
 		},
 		{
-			hours: '1h30 semanal',
-			price: 'R$518,00'
-		},
-		{
 			hours: '1h50 semanais',
 			price: 'R$565,00'
 		}
@@ -88,7 +84,7 @@
 			</h2>
 			<p class="mb-8 text-xl font-bold italic text-brand-yellow">25 semanas</p>
 
-			<div class="grid gap-8 md:grid-cols-3">
+			<div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
 				{#each individualPackagesSemestral as pkg, i}
 					<div
 						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-yellow p-6 text-brand-purple shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105"
