@@ -4,27 +4,39 @@
 	import StickerButton from '$lib/components/StickerButton.svelte';
 	import MessageCircle from 'lucide-svelte/icons/message-circle';
 
-	let individualPackages = [
+	let individualPackagesSemestral = [
 		{
 			hours: '50 min semanais',
-			semesterPrice: 'R$370,00',
-			annualPrice: 'R$341,00'
+			price: 'R$370,00'
 		},
 		{
 			hours: '1h30 semanal',
-			semesterPrice: 'R$518,00',
-			annualPrice: 'R$481,00'
+			price: 'R$518,00'
 		},
 		{
 			hours: '1h50 semanais',
-			semesterPrice: 'R$565,00',
-			annualPrice: 'R$608,00'
+			price: 'R$565,00'
+		}
+	];
+
+	let individualPackagesAnnual = [
+		{
+			hours: '50 min semanais',
+			price: 'R$341,00'
+		},
+		{
+			hours: '1h50 semanais',
+			price: 'R$481,00'
+		},
+		{
+			hours: '110 min semanais',
+			price: 'R$590,00'
 		}
 	];
 
 	let groupPackages = [
 		{
-			hours: '50 min semanais',
+			hours: '1h semanal',
 			semesterPrice: 'R$220,00',
 			annualPrice: 'R$200,00'
 		},
@@ -34,14 +46,14 @@
 			annualPrice: 'R$300,00'
 		},
 		{
-			hours: '1h50 semanais',
+			hours: '2h semanais',
 			semesterPrice: 'R$441,00',
 			annualPrice: 'R$400,00'
 		}
 	];
 
 	function getWhatsAppLink(pkg, type, period) {
-		const price = period === 'Semestral' ? pkg.semesterPrice : pkg.annualPrice;
+		const price = pkg.price || (period === 'Semestral' ? pkg.semesterPrice : pkg.annualPrice);
 		const message = `Olá! Tenho interesse no pacote ${type} de ${pkg.hours} (${period}) por ${price}. Gostaria de mais informações.`;
 		return `https://wa.me/559293120574?text=${encodeURIComponent(message)}`;
 	}
@@ -77,7 +89,7 @@
 			<p class="mb-8 text-xl font-bold italic text-brand-yellow">25 semanas</p>
 
 			<div class="grid gap-8 md:grid-cols-3">
-				{#each individualPackages as pkg, i}
+				{#each individualPackagesSemestral as pkg, i}
 					<div
 						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-yellow p-6 text-brand-purple shadow-[8px_8px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105"
 						in:fly={{ y: 50, duration: 800, delay: i * 200 }}
@@ -89,7 +101,7 @@
 								{pkg.hours}
 							</h3>
 							<p class="text-lg font-bold">6 mensalidades de</p>
-							<p class="font-display text-5xl italic">{pkg.semesterPrice}</p>
+							<p class="font-display text-5xl italic">{pkg.price}</p>
 						</div>
 
 						<!-- Button: Always visible on mobile, expands on hover on desktop -->
@@ -120,7 +132,7 @@
 			<p class="mb-8 text-xl font-bold italic text-brand-yellow">50 semanas</p>
 
 			<div class="grid gap-8 md:grid-cols-3">
-				{#each individualPackages as pkg, i}
+				{#each individualPackagesAnnual as pkg, i}
 					<div
 						class="group relative flex flex-col items-center justify-between rounded-3xl border-4 border-brand-yellow bg-brand-purple p-6 text-brand-yellow shadow-[8px_8px_0px_rgba(255,255,0,0.3)] transition-all duration-300"
 						in:fly={{ y: 50, duration: 800, delay: (i + 3) * 200 }}
@@ -132,7 +144,7 @@
 								{pkg.hours}
 							</h3>
 							<p class="text-lg font-bold">12 mensalidades de</p>
-							<p class="font-display text-5xl italic">{pkg.annualPrice}</p>
+							<p class="font-display text-5xl italic">{pkg.price}</p>
 						</div>
 
 						<div
