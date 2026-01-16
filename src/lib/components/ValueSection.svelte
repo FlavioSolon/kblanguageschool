@@ -9,10 +9,8 @@
 	<div class="relative z-10 mx-auto grid max-w-6xl gap-12 md:grid-cols-2 items-center">
 		<!-- Left: Image -->
 		<div class="flex justify-center md:justify-end">
-			<div
-				class="relative w-full max-w-md aspect-square border-4 border-black hard-shadow overflow-hidden"
-			>
-				<img src="/keity_lendo.jpg" alt="Keity lendo um livro" class="w-full h-full object-cover" />
+			<div class="relative w-full max-w-md border-4 border-black hard-shadow overflow-hidden">
+				<img src="/keity_lendo.jpg" alt="Keity lendo um livro" class="w-full h-auto" />
 			</div>
 		</div>
 

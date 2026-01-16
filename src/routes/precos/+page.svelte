@@ -6,7 +6,7 @@
 
 	let individualPackages = [
 		{
-			hours: '1h semanal',
+			hours: '50 min semanais',
 			semesterPrice: 'R$370,00',
 			annualPrice: 'R$341,00'
 		},
@@ -16,15 +16,15 @@
 			annualPrice: 'R$481,00'
 		},
 		{
-			hours: '2h semanais',
-			semesterPrice: 'R$665,00',
+			hours: '1h50 semanais',
+			semesterPrice: 'R$565,00',
 			annualPrice: 'R$608,00'
 		}
 	];
 
 	let groupPackages = [
 		{
-			hours: '1h semanal',
+			hours: '50 min semanais',
 			semesterPrice: 'R$220,00',
 			annualPrice: 'R$200,00'
 		},
@@ -34,7 +34,7 @@
 			annualPrice: 'R$300,00'
 		},
 		{
-			hours: '2h semanais',
+			hours: '1h50 semanais',
 			semesterPrice: 'R$441,00',
 			annualPrice: 'R$400,00'
 		}
